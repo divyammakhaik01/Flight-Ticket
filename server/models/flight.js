@@ -9,20 +9,27 @@ const flight_schema = mongoose.Schema({
         type : Boolean , 
         require : true
     } , 
-    bookedSeats: [{type : Number }],
+    bookedSeats: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "booked_flight"
+    }],
     from: {type :String},
     to: {type :String},
-    fromTime: {type :String},
-    toTime: {type :String},
+    fromTime: {type :Date},
+    toTime: {type :Date},
     user : {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "user"
     },
     price : {
         type : Number ,
         require : true
-    }
-
+    } , 
+    bookedSeatsNumber : [
+        {
+            type : Number , 
+        }
+    ]
 })
 
 

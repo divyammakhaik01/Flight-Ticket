@@ -18,9 +18,11 @@ const user_schema = mongoose.Schema({
         type : Boolean , 
         require : true
     } , 
+    // for admin
     flights: [
         { type: mongoose.Schema.ObjectId, ref: "flight" }
     ],
+    // for user
     flights_booked : [
         { type: mongoose.Schema.ObjectId, ref: "flight" }
     ]

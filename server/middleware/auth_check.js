@@ -5,6 +5,7 @@ const user = require("../models/user");
 
 module.exports = async(req , res , next) => {
 
+    console.log(req.header("token"))
     try {
         const token = JSON.parse(req.header("token"));
         console.log("----------- "  , token);
